@@ -1,10 +1,11 @@
 from fastapi import APIRouter
-from ..models import Log
+from ..models.log import RiskScoreUser
 from fastapi import Body, Query, Path
 
-router = APIRouter()
+log_router = APIRouter()
 
 
-@router.post("/log")#path operation decorator
-def create_log(log: Log = Body(...)):#un aprametro es obligatorio con el (...)
+@log_router.post("/log")
+async def create_log(log: RiskScoreUser = Body(...)):
+    """Create Log and update Historical Metrics Values"""
     return log
