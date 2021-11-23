@@ -1,4 +1,5 @@
-from ..models.register_log import RegisterFormat
+from app.models.log import Log
+
 class MockDataDb:
 
     def query_data_metrics_log():
@@ -37,7 +38,7 @@ class MockDataDb:
             }
         ]
 
-        result =[RegisterFormat(**x)for x in query]
+        result =[Log(**x)for x in query]
 
         return result
 

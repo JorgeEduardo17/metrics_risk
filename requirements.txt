@@ -2,3 +2,5 @@ fastapi
 uvicorn
 requests
 pytest
+ipython
+ipdb

@@ -1,12 +1,15 @@
 
+#FastAPI
 from fastapi import FastAPI, responses
+
+#Routers Moduls
 from app.routers.log import log_router
-from app.routers.metrics import metric_router
+#from app.routers.metrics import metric_router
 
 app = FastAPI()#instancia de fastAPI se crea
 
 app.include_router(log_router)
-app.include_router(metric_router)
+#app.include_router(metric_router)
 
 HTML_INIT = """
 <!DOCTYPE html>

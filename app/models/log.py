@@ -1,12 +1,15 @@
-# Models
 #Python
 from datetime import date, datetime, time
 
 #Pydantic
-from pydantic import BaseModel
-from pydantic import Field
+from pydantic import BaseModel, Field
 
-class RiskScoreUser(BaseModel):
+
+class Log(BaseModel):
+
+    date: datetime = Field(
+        ...
+    )
 
     username: str = Field(
         ...,
@@ -26,7 +29,11 @@ class RiskScoreUser(BaseModel):
         max_length=20
     )
 
-    IsUserKnown: bool = Field(
+    description: str = Field(
+    ...,
+    )
+
+"""     IsUserKnown: bool = Field(
         ...,
         description="Is the user ever log in seen"
         )
@@ -59,4 +66,4 @@ class RiskScoreUser(BaseModel):
     FailedLoginCountLastWeek: int = Field(
         ...,
         description="Number of failed logins for last week"
-    )
+    ) """
