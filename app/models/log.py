@@ -12,19 +12,16 @@ class Log(BaseModel):
     )
 
     username: str = Field(
-        ...,
         min_length=1,
         max_length=20
     )
 
     ip_address: str = Field(
-        ...,
         min_length=1,
         max_length=20
     )
 
     mac_address: str = Field(
-        ...,
         min_length=1,
         max_length=20
     )

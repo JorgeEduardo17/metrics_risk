@@ -23,6 +23,7 @@ class ExtractionDataLog:
 
         date = datetime.strptime(date_tmp, '%Y-%m-%d %H:%M:%S')
 
+        
         log = Log(
             date=date,
             username="test",

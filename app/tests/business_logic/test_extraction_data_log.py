@@ -12,7 +12,9 @@ def test_extraction_data():
 
     log_instance = ExtractionDataLog.get_Log_intance(log)
 
-    print (log_instance)
+    assert log_instance.ip_address == "10.10.10.1"
+    assert log_instance.mac_address == "4f8a7f94:533e226f"
+    assert log_instance.description == "sshd transport algorithms: direction=client->server cipher=aes128-ctr mac=hmac-sha1 compression=none 10.10.10.1"
 
 
 

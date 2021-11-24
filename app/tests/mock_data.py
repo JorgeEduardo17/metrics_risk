@@ -1,12 +1,12 @@
 from app.models.log import Log
 
 class MockDataDb:
-
-    def query_data_metrics_log():
+    @staticmethod
+    def get_query_data_metrics_log():
         query = [
             {
                 "id": 1,
-                "date": "2021-10-01",
+                "date": "2021-10-01 05:42:52",
                 "username": "joed",
                 "mac_address": "mac1",
                 "ip_address": "192.0.0.1",
@@ -14,7 +14,7 @@ class MockDataDb:
             },
             {
                 "id": 2,
-                "date": "2021-10-01",
+                "date": "2021-10-01 05:42:52",
                 "username": "joed",
                 "mac_address": "mac1",
                 "ip_address": "192.0.0.1",
@@ -22,7 +22,7 @@ class MockDataDb:
             },
             {
                 "id": 3,
-                "date": "2021-10-02",
+                "date": "2021-10-02 05:42:52",
                 "username": "guad",
                 "mac_address": "mac2",
                 "ip_address": "192.0.0.10",
@@ -30,16 +30,17 @@ class MockDataDb:
             },
             {
                 "id": 4,
-                "date": "2021-10-03",
+                "date": "2021-10-03 05:42:52",
                 "username": "guad",
                 "mac_address": "mac2",
                 "ip_address": "192.0.0.10",
                 "description": "loguin test consult server",
             }
         ]
-
-        result =[Log(**x)for x in query]
-
+        result =[]
+        for x in query:
+            log = Log(**x)
+            result.append(log)
         return result
 
     def data_test_db():
